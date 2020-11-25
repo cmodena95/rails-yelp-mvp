@@ -9,8 +9,11 @@
 <%= p review.content %>
 <%= p review.rating %>
 <%= p 'stars' %>
-<%= link_to 'Delete review', review_path(@review), method: :delete %>
+<%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
 </p>
 <% end %>
 
-<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+
